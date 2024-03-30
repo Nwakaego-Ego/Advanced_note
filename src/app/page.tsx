@@ -1,15 +1,14 @@
 "use client";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import Notes from "../app/components/note/notes";
-export default function Home() {
-  return (
-    <main>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Notes />} />
-          <Route element={<Navigate to="/" />} />
-        </Routes>
-      </BrowserRouter>
-    </main>
-  );
+import React, { useEffect } from "react";
+import { useRouter } from "next/router";
+
+export default function CatchAllPage() {
+  const router = useRouter();
+
+  // Redirect to the home page
+  useEffect(() => {
+    router.push("/");
+  }, []);
+
+  return null; // You can return null or any other content you want to render on this page
 }
