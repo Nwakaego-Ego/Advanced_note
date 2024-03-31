@@ -1,14 +1,35 @@
+// "use client";
+// import Note from "../app/components/note/page";
+// import { useRouter } from "next/router";
+
+// export default function Home() {
+//   const router = useRouter();
+
+//   const navigateToHome = () => {
+//     router.push("/");
+//   };
+
+//   return (
+//     <main className="">
+//       <Note />
+//       <button onClick={navigateToHome}>Go Home</button>
+//     </main>
+//   );
+// }
+
 "use client";
 import React, { useEffect } from "react";
+import Note from "../app/components/note/page";
 import { useRouter } from "next/router";
 
-export default function CatchAllPage() {
+export default function page() {
   const router = useRouter();
 
-  // Redirect to the home page
-  useEffect(() => {
-    router.push("/");
-  }, []);
+  useEffect(() => {}, []);
 
-  return null; // You can return null or any other content you want to render on this page
+  return (
+    <div>
+      <Note />
+    </div>
+  );
 }
