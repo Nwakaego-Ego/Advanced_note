@@ -20,12 +20,14 @@
 "use client";
 import React, { useEffect } from "react";
 import Note from "../app/components/note/page";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 export default function page() {
   const router = useRouter();
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    router.push("/");
+  }, []);
 
   return (
     <div>
