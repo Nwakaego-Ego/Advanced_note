@@ -1,37 +1,68 @@
-// "use client";
-// import Note from "../app/components/note/page";
-// import { useRouter } from "next/router";
+// // "use client";
+// // import Note from "../app/components/note/page";
+// // import { useRouter } from "next/router";
 
-// export default function Home() {
+// // export default function Home() {
+// //   const router = useRouter();
+
+// //   const navigateToHome = () => {
+// //     router.push("/");
+// //   };
+
+// //   return (
+// //     <main className="">
+// //       <Note />
+// //       <button onClick={navigateToHome}>Go Home</button>
+// //     </main>
+// //   );
+// // }
+
+// "use client";
+// import React, { useEffect } from "react";
+// import Note from "../app/components/note/page";
+// import { useRouter } from "next/navigation";
+
+// export default function page() {
 //   const router = useRouter();
 
-//   const navigateToHome = () => {
-//     router.push("/");
-//   };
+//   // useEffect(() => {
+//   //   router.push("/");
+//   // }, []);
+
+//   useEffect(() => {
+//     // Redirect to the homepage if the route doesn't exist
+//     if (!router.isReady) return; // Wait until the router is ready
+//     if (!router.query.slug) {
+//       router.push("/");
+//     }
+//   }, [router.isReady, router.query.slug]);
 
 //   return (
-//     <main className="">
+//     <div>
 //       <Note />
-//       <button onClick={navigateToHome}>Go Home</button>
-//     </main>
+//     </div>
 //   );
 // }
 
 "use client";
 import React, { useEffect } from "react";
-import Note from "../app/components/note/page";
-import { useRouter } from "next/navigation";
+import { useRouter } from "next/router";
 
-export default function page() {
+export default function CatchAllPage() {
   const router = useRouter();
 
   useEffect(() => {
-    router.push("/");
-  }, []);
+    // Redirect to the homepage if the route doesn't exist
+    if (!router.isReady) return; // Wait until the router is ready
+    if (!router.query.slug) {
+      router.push("/");
+    }
+  }, [router.isReady, router.query.slug]);
 
   return (
     <div>
-      <Note />
+      {/* Add your content here */}
+      This is the CatchAllPage.
     </div>
   );
 }
