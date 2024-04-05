@@ -1,23 +1,31 @@
-"use client";
-// import { useRouter } from "next/navigation";
-import { useRouter } from "next/router";
+// "use client";
+// import { useState } from "react";
+// import { usePathname } from "next/navigation";
+// import Note from "../app/components/note/page";
+
+// export default function home() {
+//   const [wrongPath, setWrongPath] = useState(false);
+//   const pathname = usePathname();
+
+//   if (pathname === "/specific-path") {
+//     setWrongPath(true);
+//   }
+
+//   return (
+//     <main className="">
+//       <Note />
+//       {/* <Route path"*" element={<h1>Page not found</h1>} */}
+//       {wrongPath && <h1>Page not found</h1>}
+//     </main>
+//   );
+// }
+
 import Note from "../app/components/note/page";
-import Link from "next/link";
 
-export default function Home() {
-  const router = useRouter();
-
-  // Assuming '/note' is the intended route, you can check if the current route is different
-  // and redirect the user to the home page if it's not the correct route.
-  if (router.pathname !== "/note") {
-    router.push("/"); // Redirect to the home page
-    return null; // Render nothing while redirecting
-  }
-
+export default function home() {
   return (
     <main className="">
       <Note />
-      <Link href="/note">Go Home</Link>
     </main>
   );
 }

@@ -1,5 +1,5 @@
 "use client";
 
 export default function note() {
-  return <div>Home Page</div>;
+  return <div>Here is the Dashboard for the Note</div>;
 }
